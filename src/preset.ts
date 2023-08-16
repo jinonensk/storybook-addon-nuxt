@@ -75,7 +75,7 @@ async function initNuxt() {
 
   function stubComposables() {
     nuxt.hook('imports:sources', (presets) => {
-      const stubbedComposables = ['useNuxtApp'];
+      const stubbedComposables = ['useNuxtApp', 'useRoute', 'useRouter', 'useRuntimeConfig'];
       const appPreset = presets.find((p) => p.from === '#app');
       if (appPreset) {
         appPreset.imports = appPreset.imports.filter(
